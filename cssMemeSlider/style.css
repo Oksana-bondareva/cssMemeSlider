@@ -1,0 +1,226 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(181, 231, 214);
+}
+
+.slaider-wrapper {
+    width: 70%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 2%;
+    margin: 10% auto;
+    background-color: cyan;  
+}
+
+.img-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slaid {
+    width: 90%;
+}
+
+.slaid1 {
+    opacity: 0;
+    visibility: hidden;
+    height: 26em;
+}
+
+.slaid2 {
+    margin-top: -58%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slaid3 {
+    margin-top: -57%;
+    opacity: 0;
+    visibility: hidden;
+    height: 26em;
+}
+
+.slaid4 {
+    margin-top: -59%; 
+    opacity: 0; 
+    visibility: hidden;
+    height: 26em;
+}
+ 
+.pagination-wrapper {
+    display: flex;
+    width: 32%;
+    height: 5rem;
+    margin-top: 1.3%;
+    margin-bottom: 5%;
+    justify-content: end;
+    margin-left: 58%;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-right: 65%;
+    height: 9vh;
+}
+
+.text1, .text2, .text3, .text4 {
+    font-size: larger;
+    font-style: italic;
+    color: darkblue;
+    
+}
+
+.text1 {
+    margin-top: 60%;
+    opacity: 1;
+    visibility: hidden;  
+}
+
+.text2 {
+    margin-top: -30%;
+    opacity: 1;
+    visibility: hidden;
+}
+
+.text3 {
+    margin-top: -29%;
+    opacity: 1;
+    visibility: hidden;
+}
+
+.text4 {
+    margin-top: -26%;
+    opacity: 1;
+    visibility: hidden;
+}
+
+.controler:hover {
+    background-color: aliceblue;
+    outline: 0.1rem solid rgb(31, 39, 72);
+    transition: 1.5s;
+}
+
+input {
+    display: none;
+}
+
+label {
+    width: 1.5rem;
+    height: 2rem;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5rem;
+    margin-top: -5%;
+}
+
+.controler {
+    width: 80%;
+    height: 60%;
+    border-radius: 0.5rem;
+    background-color: blue;
+    outline: 0.2rem solid rgba(21, 204, 122, 0.508);
+    margin-top: 25%;
+}
+
+#pagination1:checked ~ .pagination-wrapper .pagination1 .controler,
+#pagination2:checked ~ .pagination-wrapper .pagination2 .controler,
+#pagination3:checked ~ .pagination-wrapper .pagination3 .controler,
+#pagination4:checked ~ .pagination-wrapper .pagination4 .controler {
+  background-color: rgb(64, 10, 100);
+  outline: 0.2rem solid greenyellow;
+}
+
+
+#pagination1:checked ~ .img-wrapper > .slaid1,
+#pagination2:checked ~ .img-wrapper > .slaid2,
+#pagination3:checked ~ .img-wrapper > .slaid3,
+#pagination4:checked ~ .img-wrapper > .slaid4 {
+	opacity: 1;
+	visibility: visible;
+    animation: all ease 5s;
+}
+
+@keyframes all {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+#pagination1:checked ~ .text-wrapper > .text1,
+#pagination2:checked ~ .text-wrapper > .text2,
+#pagination3:checked ~ .text-wrapper > .text3,
+#pagination4:checked ~ .text-wrapper > .text4 {
+    transition: 1.5s;
+	opacity: 1;
+	visibility: visible;
+    transform: scale(1.2);
+}
+
+@media (max-width: 970px) {
+    .slaid {
+        height: auto;
+    }
+}
+
+@media (max-width: 710px) {
+
+    .pagination-wrapper {
+        width: 30%;
+        margin: 0% auto;
+    }
+
+    .text-wrapper {
+        width: 35%;
+        margin-left: 19%;
+        height: 5vh;
+    }
+
+    .text1, .text2, .text3, .text4 {
+        font-size: small;
+    }
+
+    label {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .text2 {
+        margin-top: -22%;
+    }
+    
+    .text3 {
+        margin-top: -25%;
+    }
+    
+    .text4 {
+        margin-top: -22%;
+    }
+}
+
+@media (max-width: 500px) {
+    .slaid1 {
+        height: 13em;
+    }
+    
+    .slaid2 {
+        margin-top: -59%;
+    }
+    
+    .slaid3 {
+        margin-top: -58%;
+        height: 13em;
+    }
+    
+    .slaid4 {
+        margin-top: -60%; 
+        height: 13em;
+    }
+}
+
